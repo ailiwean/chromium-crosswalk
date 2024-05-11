@@ -549,16 +549,6 @@ hooks = [
   {
     'action': [
       'python2',
-      'src/third_party/binutils/download.py'
-    ],
-    'pattern':
-      'src/third_party/binutils',
-    'name':
-      'binutils'
-  },
-  {
-    'action': [
-      'python2',
       'src/tools/clang/scripts/update.py',
       '--if-needed'
     ],
