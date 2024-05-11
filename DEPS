@@ -548,7 +548,7 @@ hooks = [
   },
   {
     'action': [
-      'python',
+      'python2',
       'src/third_party/binutils/download.py'
     ],
     'pattern':
@@ -558,7 +558,7 @@ hooks = [
   },
   {
     'action': [
-      'python',
+      'python2',
       'src/tools/clang/scripts/update.py',
       '--if-needed'
     ],
@@ -569,7 +569,7 @@ hooks = [
   },
   {
     'action': [
-      'python',
+      'python2',
       'src/build/util/lastchange.py',
       '-o',
       'src/build/util/LASTCHANGE'
@@ -581,7 +581,7 @@ hooks = [
   },
   {
     'action': [
-      'python',
+      'python2',
       'src/build/util/lastchange.py',
       '--git-hash-only',
       '-s',
@@ -801,7 +801,7 @@ hooks = [
   },
   {
     'action': [
-      'python',
+      'python2',
       'src/build/get_syzygy_binaries.py',
       '--output-dir=src/third_party/kasko/binaries',
       '--revision=266a18d9209be5ca5c5dcd0620942b82a2d238f3',
@@ -861,7 +861,7 @@ hooks = [
   },
   {
     'action': [
-      'python',
+      'python2',
       'src/build/android/download_doclava.py'
     ],
     'pattern':
@@ -871,7 +871,7 @@ hooks = [
   },
   {
     'action': [
-      'python',
+      'python2',
       'src/build/gyp_chromium',
       '--running-as-hook'
     ],
