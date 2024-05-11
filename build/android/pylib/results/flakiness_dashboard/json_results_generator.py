@@ -13,7 +13,7 @@ import logging
 import mimetypes
 import os
 import time
-import urllib2
+import urllib
 
 _log = logging.getLogger(__name__)
 
@@ -374,23 +374,23 @@ class JSONResultsGeneratorBase(object):
       return {}, None
 
     results_file_url = (self.URL_FOR_TEST_LIST_JSON %
-                        (urllib2.quote(self._test_results_server),
-                         urllib2.quote(self._builder_name),
+                        (urllib.quote(self._test_results_server),
+                         urllib.quote(self._builder_name),
                          self.RESULTS_FILENAME,
-                         urllib2.quote(self._test_type),
-                         urllib2.quote(self._master_name)))
+                         urllib.quote(self._test_type),
+                         urllib.quote(self._master_name)))
 
     # pylint: disable=redefined-variable-type
     try:
       # FIXME: We should talk to the network via a Host object.
-      results_file = urllib2.urlopen(results_file_url)
+      results_file = urllib.urlopen(results_file_url)
       old_results = results_file.read()
-    except urllib2.HTTPError, http_error:
+    except urllib.HTTPError, http_error:
       # A non-4xx status code means the bot is hosed for some reason
       # and we can't grab the results.json file off of it.
       if http_error.code < 400 and http_error.code >= 500:
         error = http_error
-    except urllib2.URLError, url_error:
+    except urllib.URLError, url_error:
       error = url_error
     # pylint: enable=redefined-variable-type
 
@@ -642,10 +642,10 @@ class _FileUploader(object):
     end = start + self._timeout_seconds
     while time.time() < end:
       try:
-        request = urllib2.Request(self._url, data,
+        request = urllib.Request(self._url, data,
                                   {'Content-Type': content_type})
-        return urllib2.urlopen(request)
-      except urllib2.HTTPError as e:
+        return urllib.urlopen(request)
+      except urllib.HTTPError as e:
         _log.warn("Received HTTP status %s loading \"%s\".  "
                   'Retrying in 10 seconds...', e.code, e.filename)
         time.sleep(10)
