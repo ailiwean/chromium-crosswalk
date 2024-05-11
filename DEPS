@@ -823,12 +823,6 @@ deps = {
   'src/third_party/crc32c/src':
     Var('chromium_git') + '/external/github.com/google/crc32c.git' + '@' + '5998f8451548244de8cde7fab387a550e7c4497d',
 
-  # For Linux and Chromium OS.
-  'src/third_party/cros_system_api': {
-      'url': Var('chromium_git') + '/chromiumos/platform2/system_api.git' + '@' + '206270625a4ac391aada9ac5f0c32a4e66e9f59c',
-      'condition': 'checkout_linux',
-  },
-
   'src/third_party/custom_tabs_client/src': {
       'url': Var('chromium_git') + '/custom-tabs-client.git' + '@' + 'a633542d9854151eb4f0bfd1d93da88f5934a11a',
       'condition': 'checkout_android',
