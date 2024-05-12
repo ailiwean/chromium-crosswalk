@@ -423,6 +423,13 @@ deps = {
     'dep_type': 'cipd',
   },
 
+    # For Linux and Chromium OS.
+  'src/third_party/cros_system_api': {
+      'url': Var('chromium_git') + '/chromiumos/platform2/system_api.git' + '@' + '206270625a4ac391aada9ac5f0c32a4e66e9f59c',
+      'condition': 'checkout_linux',
+  },
+
+
   'src/chrome/test/data/perf/canvas_bench':
     Var('chromium_git') + '/chromium/canvas_bench.git' + '@' + 'a7b40ea5ae0239517d78845a5fc9b12976bfc732',
 
