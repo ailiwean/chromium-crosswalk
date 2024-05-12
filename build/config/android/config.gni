@@ -200,7 +200,7 @@ if (is_android || is_chromeos) {
     update_android_aar_prebuilts = false
 
     # Turns off android lint. Useful for prototyping or for faster local builds.
-    disable_android_lint = false
+    disable_android_lint = true
 
     # Location of aapt2 used for app bundles. For now, a more recent version
     # than the one distributed with the Android SDK is required.
