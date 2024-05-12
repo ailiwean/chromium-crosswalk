@@ -2427,6 +2427,17 @@ hooks = [
     'condition': 'host_os == "mac" and (checkout_win or checkout_fuchsia)',
     'action': ['python', 'src/tools/clang/scripts/download_lld_mac.py'],
   },
+
+  {
+    'name': 'binutils',
+    'pattern': 'src/third_party/binutils',
+    'condition': 'host_os == "linux" and host_cpu != "mips64"',
+    'action': [
+        'python',
+        'src/third_party/binutils/download.py',
+    ],
+  },
+
   {
     # Update LASTCHANGE.
     'name': 'lastchange',
